@@ -1,16 +1,16 @@
 package assignments;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-
 import assignments.annotations.FullNameProcessorGeneratorAnnotation;
 import assignments.annotations.ListIteratorAnnotation;
 import assignments.annotations.ReadFullProcessorNameAnnotation;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
 
 @Getter
 @Setter
@@ -20,7 +20,8 @@ public class LocalProcessor {
     private String processorVersion;
     private Integer valueOfCheap;
     private Scanner informationScanner;
-    private static List<String> stringArrayList = new LinkedList<>();
+    private List<String> stringArrayList = new LinkedList<>();
+    private StringBuilder sb;
 
     public LocalProcessor(
             String processorName,
@@ -44,7 +45,7 @@ public class LocalProcessor {
     @ListIteratorAnnotation
     public void listIterator(List<String> stringList) {
         for (String item : stringList) {
-            System.out.println(item.hashCode());
+            System.out.println(item == null ? null : item.hashCode());
         }
     }
 
